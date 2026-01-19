@@ -3,4 +3,4 @@ Welcome to my repo. This repo is for learning and homework from Data Engineering
 Cheers!!!
 
 ## Homework
-01-docker-terraform:  
+01-docker-terraform: [Homework 01](https://github.com/iqbalrmadhn/data-engineering-course/tree/main/01-docker-terraform/homework)
