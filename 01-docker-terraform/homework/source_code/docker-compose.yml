@@ -1,0 +1,30 @@
+services:
+  pgdb:
+    image: postgres:18
+    container_name: pgdb
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - ${PORT_PSQL}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=${PASS_PSQL}
+      - POSTGRES_USER=${USER_PSQL}
+      - POSTGRES_DB=${DB_PSQL}
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${EMAIL_PGADMIN}
+      - PGADMIN_DEFAULT_PASSWORD=${PASS_PGADMIN}
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - ${PORT_PGADMIN}:80
+
+volumes:
+  postgres_data:
+  pgadmin_data:
