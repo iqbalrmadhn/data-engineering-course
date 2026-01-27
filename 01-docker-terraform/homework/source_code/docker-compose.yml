@@ -28,3 +28,7 @@ services:
 volumes:
   postgres_data:
   pgadmin_data:
+
+networks:
+  source_code_default:
+    name: source_code_default

@@ -7,3 +7,4 @@ Cheers!!!
 
 ## Homework
 01-docker-terraform: [Homework 01](01-docker-terraform/homework/README.md)
+02-workflow-orchestration: [Homework 02](02-workflow-orchestration/homework/README.md)

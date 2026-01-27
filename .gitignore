@@ -3,6 +3,7 @@
 *.lock.hcl
 uv.lock
 *.env
+*.env_encoded
 *.venv
 de-course-484302-f4fb526ccbf2.json
 *.ipynb
