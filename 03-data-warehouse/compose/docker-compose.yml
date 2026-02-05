@@ -1,0 +1,53 @@
+x-airflow-common: &airflow-common
+  image: apache/airflow:2.8.1
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_db/airflow
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    _PIP_ADDITIONAL_REQUIREMENTS: ""
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    - ./data:/opt/airflow/data
+  depends_on:
+    - airflow_db
+
+services:
+  airflow_db:
+    image: postgres:13
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - POSTGRES_PASSWORD=${PASS_PSQL_AIRFLOW}
+      - POSTGRES_USER=${USER_PSQL_AIRFLOW}
+      - POSTGRES_DB=${DB_PSQL_AIRFLOW}
+    ports:
+      - ${PORT_PSQL_AIRFLOW}:5432
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - ${PORT_AIRFLOW}:8080
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+
+  airflow-init:
+    <<: *airflow-common
+    command: bash -c "airflow db migrate && airflow users create \
+      --username ${USER_AIRFLOW} \
+      --password ${PASS_AIRFLOW} \
+      --firstname Admin \
+      --lastname User \
+      --role Admin \
+      --email ${EMAIL_ADMIN_AIRFLOW}"
+
+volumes:
+  postgres-db-volume:

@@ -9,3 +9,5 @@ Cheers!!!
 01-docker-terraform: [Homework 01](01-docker-terraform/homework/README.md)
 
 02-workflow-orchestration: [Homework 02](02-workflow-orchestration/homework/README.md)
+
+03-data-warehouse: [Homework 03](03-data-warehouse/homework/README.md)

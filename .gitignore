@@ -7,3 +7,7 @@ uv.lock
 *.venv
 de-course-484302-f4fb526ccbf2.json
 *.ipynb
+/03-data-warehouse/compose/dags/__pycache__
+/03-data-warehouse/compose/data/
+/03-data-warehouse/compose/logs/
+/03-data-warehouse/compose/plugins/
