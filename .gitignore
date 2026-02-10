@@ -11,3 +11,16 @@ de-course-484302-f4fb526ccbf2.json
 /03-data-warehouse/compose/data/
 /03-data-warehouse/compose/logs/
 /03-data-warehouse/compose/plugins/
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
+
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+/04-analytics-engineering/dbt_project/target/
+/04-analytics-engineering/dbt_project/dbt_packages/
+/04-analytics-engineering/dbt_project/logs/
+# end dbt Cloud content
