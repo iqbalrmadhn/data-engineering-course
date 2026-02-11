@@ -1,0 +1,1 @@
+SELECT * from `de-course-484302.nyc_taxi.yellow_trip_data` limit 10;
