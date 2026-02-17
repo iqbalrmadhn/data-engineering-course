@@ -11,3 +11,5 @@ Cheers!!!
 02-workflow-orchestration: [Homework 02](02-workflow-orchestration/homework/README.md)
 
 03-data-warehouse: [Homework 03](03-data-warehouse/homework/README.md)
+
+04-analytics-engineering: [Homework 04](04-analytics-engineering/homework/README.md)
