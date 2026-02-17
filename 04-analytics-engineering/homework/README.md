@@ -1,15 +1,9 @@
-Welcome to your new dbt project!
+# Homework 04
+In this session, I use Airflow for the ochestration. The Airflow will be donwload data from web then upload to GCS. First step is run the docker compose for deploy Airflow in localhost.
+``` bash
+cd /03-data-warehouse/compose
 
-### Using the starter project
+docker compose up -d
+```
 
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## 1. dbt Lineage and Execution

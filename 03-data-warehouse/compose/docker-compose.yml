@@ -21,11 +21,11 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     environment:
-      - POSTGRES_PASSWORD=${PASS_PSQL_AIRFLOW}
-      - POSTGRES_USER=${USER_PSQL_AIRFLOW}
-      - POSTGRES_DB=${DB_PSQL_AIRFLOW}
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_USER=airflow
+      - POSTGRES_DB=airflow
     ports:
-      - ${PORT_PSQL_AIRFLOW}:5432
+      - 5444:5432
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
 
@@ -33,7 +33,7 @@ services:
     <<: *airflow-common
     command: webserver
     ports:
-      - ${PORT_AIRFLOW}:8080
+      - 8080:8080
 
   airflow-scheduler:
     <<: *airflow-common
@@ -42,12 +42,12 @@ services:
   airflow-init:
     <<: *airflow-common
     command: bash -c "airflow db migrate && airflow users create \
-      --username ${USER_AIRFLOW} \
-      --password ${PASS_AIRFLOW} \
+      --username admin \
+      --password admin \
       --firstname Admin \
       --lastname User \
       --role Admin \
-      --email ${EMAIL_ADMIN_AIRFLOW}"
+      --email admin@example.com"
 
 volumes:
   postgres-db-volume:

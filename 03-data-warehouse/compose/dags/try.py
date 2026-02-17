@@ -19,7 +19,7 @@ INIT_URL = 'https://d37ci6vzurychx.cloudfront.net/trip-data'
 def upload_to_gcs(bucket_name, folder_gcs, folder_local_file):
     client = storage.Client.from_service_account_json(
         Variable.get("api_key_gc"),
-        project="de-course-484302"
+        project=Variable.get("project_id_gcp")
         )
     # client = storage.Client()
     bucket = client.lookup_bucket(bucket_name)
