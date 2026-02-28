@@ -1,0 +1,9 @@
+services:
+  duckdb:
+    image: duckdb/duckdb:latest
+    container_name: duckdb
+    volumes:
+      - ./duckdb_data:/data
+    working_dir: /data
+    stdin_open: true
+    tty: true

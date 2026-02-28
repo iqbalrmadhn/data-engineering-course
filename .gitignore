@@ -24,3 +24,13 @@ logs/
 /04-analytics-engineering/dbt_project/dbt_packages/
 /04-analytics-engineering/dbt_project/logs/
 # end dbt Cloud content
+
+.bruin.yml
+logs/runs
+logs/*.log
+__pycache__/
+*.py[cod]
+
+/05-data-platform/duckdb_data/
+
+logs/queries
