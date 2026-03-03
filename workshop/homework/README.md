@@ -1,7 +1,7 @@
 # Workshop
 This session I use dlt for ingestin data from API. Data will load to DuckDB.
 
-![Script Ingestion](dlt_nyc_taxi.py)
+[Script Ingestion](dlt_nyc_taxi.py)
 
 After ingestion succes, run command pip install duckdb for connection to duckdb. Then, check data from DuckDB. Use this script for check data.
 
