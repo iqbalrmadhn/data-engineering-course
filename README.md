@@ -15,3 +15,5 @@ Cheers!!!
 04-analytics-engineering: [Homework 04](04-analytics-engineering/homework/README.md)\
 
 05-data-platform: [Homework 05](05-data-platform/README.md)
+
+Workshop: [Homework workshop](workshop/homework/README.md)
