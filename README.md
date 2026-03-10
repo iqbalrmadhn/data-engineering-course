@@ -12,10 +12,10 @@ Cheers!!!
 
 03-data-warehouse: [Homework 03](03-data-warehouse/homework/README.md)
 
-04-analytics-engineering: [Homework 04](04-analytics-engineering/homework/README.md)\
+04-analytics-engineering: [Homework 04](04-analytics-engineering/homework/README.md)
 
 05-data-platform: [Homework 05](05-data-platform/README.md)
 
-06-batch: [Homework 05](06-batch/homework/README.md)
+06-batch: [Homework 06](06-batch/homework/README.md)
 
 Workshop: [Homework workshop](workshop/homework/README.md)
