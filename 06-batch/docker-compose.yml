@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+
+  spark-master:
+    image: apache/spark:3.5.1
+    container_name: spark-master
+    command: >
+      /opt/spark/bin/spark-class
+      org.apache.spark.deploy.master.Master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+
+  spark-worker:
+    image: apache/spark:3.5.1
+    container_name: spark-worker
+    user: "1000:100"
+    depends_on:
+      - spark-master
+    command: >
+      /opt/spark/bin/spark-class
+      org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077
+    volumes:
+      - ./homework:/data
+
+  pyspark:
+    build: .
+    container_name: pyspark
+    ports:
+      - "8888:8888"
+    environment:
+      - SPARK_HOME=/opt/spark
+      - PYTHONPATH=/opt/spark/python:/opt/spark/python/lib/py4j-*.zip
+      - PYSPARK_SUBMIT_ARGS=--master spark://spark-master:7077 pyspark-shell
+    volumes:
+      - ./homework:/data
+    depends_on:
+      - spark-master
