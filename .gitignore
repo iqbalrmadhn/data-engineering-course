@@ -37,3 +37,4 @@ logs/queries
 
 /06-batch/homework/taxi_zone_lookup.csv
 /06-batch/homework/yellow_tripdata_2025-11.parquet
+/06-batch/homework/yellow_partitioned/yellow_partitioned/
